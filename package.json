@@ -1,0 +1,27 @@
+{
+  "name": "make-school-landing-page",
+  "version": "1.0.0",
+  "description": "Following Make School's tutorial for making a cat adoption landing page for the web",
+  "main": "index.js",
+  "dependencies": {
+    "parcel": "^1.12.4",
+    "scss": "^0.2.4"
+  },
+  "devDependencies": {
+    "sass": "^1.26.5"
+  },
+  "scripts": {
+    "start": "parcel src/index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joshuazhu17/make-school-landing-page.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joshuazhu17/make-school-landing-page/issues"
+  },
+  "homepage": "https://github.com/joshuazhu17/make-school-landing-page#readme"
+}

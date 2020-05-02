@@ -1,0 +1,46 @@
+@mixin navbar($background) {
+    background-color: $background;
+
+    @if lightness($background) > 60% {
+        color: $fg-dark;
+    } @else{
+        color: $fg-light;
+    }
+}
+  
+.navbar {
+    background-color:$bg;
+    width:100vw;
+    min-height:$nav-height;
+    display: flex;
+    flex-direction: row;
+    
+    .is-fixed-top{
+        position: fixed;
+        top: 0;
+        left:0;
+        right:0;
+    }
+    .is-fixed-bottom{
+        position: fixed;
+        left:0;
+        right:0;
+        bottom:0;
+    }
+    &.primary{
+        @include navbar($primary);
+    }
+    .left-items{
+        display: flex;
+        align-self:flex-start;
+
+    }
+    .right-items{
+        display: flex;
+        align-self:flex-end;
+    }
+    .nav-item{
+        padding:1rem;
+    }
+    
+}

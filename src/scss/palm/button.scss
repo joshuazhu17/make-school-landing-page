@@ -1,0 +1,35 @@
+@mixin button($background,$outlined) {
+    background-color: $background;
+
+    @if lightness($background) > 60% {
+        color: $fg-dark;
+    } @else{
+        color: $fg-light;
+    }
+    &:hover {
+        @if lightness($background) > 60% {
+            background-color: scale-color($background,$lightness:-10%);
+        }@else{
+            background-color: scale-color($background,$lightness:10%);
+        }
+    }
+    // Implement $outlined later
+}
+  
+.button {
+    &.primary{
+        @include button($primary,false);
+    }
+    &.danger{
+        @include button($danger,false);
+    }
+    
+
+    text-decoration: none;
+    border-radius: $button-radius;
+    line-height: 24px;
+    font-size: 24px;
+    padding:2*$button-radius;
+    box-sizing: content-box;
+    display:inline-block;
+}

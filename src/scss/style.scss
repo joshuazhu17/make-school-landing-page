@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Hepta+Slab&display=swap');
+@import "./palm/palm.scss";
+body,html{
+    font-family: 'Hepta Slab', serif;
+}
+
+h1 {
+    color: #000000;
+    font-size: 36px;
+}
+
+h2 {
+    color: #000000;
+}
+
+p {
+    font-size: 20px;
+}
+.first-section {
+    background-color: white;
+
+    & li {
+        margin-bottom: 8px;
+    }
+
+    & ul {
+        background-color: #F7F9FC;
+        margin-top: 25px;
+        padding: 30px 55px;
+        border-radius: 8px;
+    }
+}
