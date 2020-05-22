@@ -1,7 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Hepta+Slab&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hepta+Slab:wght@400;700&display=swap');
 @import "./palm/palm.scss";
+@font-face{
+    font-family: "Jaapokki";
+    src:url("../fonts/Jaapokki/Regular/web/jaapokki-regular.ttf");
+}
+@font-face{
+    font-family: "Jaapokki";
+    src:url("../fonts/Jaapokki/Regular/web/jaapokki-regular.ttf");
+    font-weight: bold;
+}
 body,html{
-    font-family: 'Hepta Slab', serif;
+    font-family: 'Jaapokki', serif;
 }
 
 h1 {
@@ -16,7 +25,7 @@ h2 {
 p {
     font-size: 20px;
 }
-.first-section {
+#first-section {
     background-color: white;
 
     & li {
@@ -29,4 +38,32 @@ p {
         padding: 30px 55px;
         border-radius: 8px;
     }
+}
+
+#second-section {
+    background-color: #FBFBFB;
+}
+
+#third-section {
+    @include for-phone-only {
+        img {
+            margin-top: 35px;
+        }
+    }
+}
+
+#fourth-section {
+    background-image: url("../img/cattern.png");
+    background-repeat: repeat;
+    background-color: #F0F8FF;
+    background-size: 192px 192px;
+}
+
+footer {
+    text-align: center;
+    padding: 35px 0px;
+}
+
+.footer-logo {
+    height: 1rem;
 }

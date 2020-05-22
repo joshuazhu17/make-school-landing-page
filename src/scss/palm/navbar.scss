@@ -1,46 +1,92 @@
+@import "./button.scss";
 @mixin navbar($background) {
     background-color: $background;
 
     @if lightness($background) > 60% {
         color: $fg-dark;
+        .button {
+            
+                @include button($primary,true);
+                font-size: $nav-font-size;
+                line-height: 1em;
+                box-sizing: border-box;
+        }
+        
     } @else{
         color: $fg-light;
+        .button {
+            
+            @include button($fg-light,true);
+            font-size: $nav-font-size;
+            line-height: 1em;
+            box-sizing: border-box;
+        }
     }
 }
   
 .navbar {
-    background-color:$bg;
+    
+    // background-color:$bg;
     width:100vw;
     min-height:$nav-height;
     display: flex;
+    box-sizing: border-box;
     flex-direction: row;
-    
-    .is-fixed-top{
+    justify-content: space-between;
+    padding-left: 150px;
+    padding-right: 150px;
+    @include navbar($bg);
+    &.is-fixed-top{
         position: fixed;
         top: 0;
         left:0;
         right:0;
     }
-    .is-fixed-bottom{
+    &.is-fixed-bottom{
         position: fixed;
         left:0;
         right:0;
         bottom:0;
     }
+    
     &.primary{
         @include navbar($primary);
     }
+    &.danger{
+        @include navbar($danger);
+    }
     .left-items{
-        display: flex;
-        align-self:flex-start;
+        display: inline-flex;
+        flex-direction: row;
+        align-self: center;
 
     }
     .right-items{
-        display: flex;
-        align-self:flex-end;
+        display: inline-flex;
+        flex-direction: row;
+        align-self: center;
     }
     .nav-item{
-        padding:1rem;
+        margin: ($nav-height - $nav-font-size)/2 16px;
+        align-items: center;
+        display: flex;
+        font-size: $nav-font-size;
     }
-    
+    .nav-link {
+        text-decoration: none;
+        color: inherit;
+        &:hover {
+            color: $fg-dark;
+        }
+    }
+    .nav-home {
+        text-decoration: none;
+        color: inherit;
+        font-weight: 900;
+        font-size: 16px;
+    }
+    .nav-icon {
+        height :$nav-image-height;
+        margin:($nav-font-size - $nav-image-height)/2 0;
+    }
 }

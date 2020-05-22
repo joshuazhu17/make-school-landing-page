@@ -1,11 +1,15 @@
 @mixin column($width) {
     width: ($width/12)*100%;
+    padding:$default-padding;
+    box-sizing: border-box;
 }
 
 .columns {
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
     align-items: center;
+    max-width: 100%;
 
     &.space-evenly{
         justify-content: space-evenly;
@@ -13,25 +17,38 @@
     &.space-stretch{
         justify-content: stretch;
     }
+    &.text-center {
+        text-align: center;
+    }
+
 }
 
 .column {
-    &.column-1{
-        @include column(1);
-    }
-    &.column-2{
-        @include column(2);
-    }
-    &.column-3{
-        @include column(3);
-    }
-    &.column-4{
-        @include column(4);
-    }
-    &.column-5{
-        @include column(5);
-    }
-    &.column-6{
-        @include column(6);
+    @for $i from 1 through 12 {
+        &.po-column-#{$i} { // po = phone only
+            @include for-phone-only {
+                @include column($i);
+            }
+        }
+        &.tpu-column-#{$i} { // tpu = tablet portrait up
+            @include for-tablet-portrait-up {
+                @include column($i);
+            }
+        }
+        &.tlu-column-#{$i} { // tlu = tablet landscape up
+            @include for-tablet-landscape-up {
+                @include column($i);
+            }
+        }
+        &.du-column-#{$i} { // du = desktop up
+            @include for-desktop-up {
+                @include column($i);
+            }
+        }
+        &.bdu-column-#{$i} { // bdu = big desktop up
+            @include for-big-desktop-up {
+                @include column($i);
+            }
+        }
     }
 }

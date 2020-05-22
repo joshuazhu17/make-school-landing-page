@@ -6,30 +6,61 @@
     } @else{
         color: $fg-light;
     }
+
+    
+    @if $outlined {
+        border-style: solid;
+        border-width: 1px;
+        border-color: $background;
+        color: $background;
+        background-color:transparent;
+    }
     &:hover {
         @if lightness($background) > 60% {
             background-color: scale-color($background,$lightness:-10%);
         }@else{
             background-color: scale-color($background,$lightness:10%);
         }
+        @if $outlined {
+            background-color: $background;
+            @if lightness($background) > 60% {
+                color: $fg-dark;
+            } @else{
+                color: $fg-light;
+            }
+        }
     }
-    // Implement $outlined later
 }
-  
+@mixin colored-button($background) {
+    @include button($background,false);
+    &.is-outline{
+        @include button($background,true);
+    }
+}
 .button {
+    box-sizing: content-box;
+    line-height:1em;
+    &.is-small{
+        font-size:0.5em;
+    }
+    &.is-medium{
+        font-size:1em;
+    }
+    &.is-big{
+        font-size:5em;
+    }
     &.primary{
-        @include button($primary,false);
+        @include colored-button($primary);
     }
     &.danger{
-        @include button($danger,false);
+        @include colored-button($danger);
+        box-sizing: content-box;
     }
-    
 
     text-decoration: none;
     border-radius: $button-radius;
-    line-height: 24px;
-    font-size: 24px;
+    
     padding:2*$button-radius;
-    box-sizing: content-box;
+    
     display:inline-block;
 }

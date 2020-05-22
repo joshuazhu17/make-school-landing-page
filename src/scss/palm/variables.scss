@@ -1,9 +1,19 @@
 $primary:#2a74e5;
-$primary-hover: #1f57ab;
 $danger: #ff0000;
+$transparent: transparent;
 $fg-light: white;
 $fg-dark: rgb(36, 36, 36);
+$fg-gray: #4a4a4a;;
 $bg:#efefef;
 $button-radius: 6px;
 
+$default-padding:3rem;
+
 $nav-height: 5rem;
+$nav-font-size:1rem;
+$nav-image-height:3rem;
+
+$breakpoint-tablet-portrait:600px;
+$breakpoint-tablet-landscape:900px;
+$breakpoint-desktop:1200px;
+$breakpoint-big-desktop:1800px;
