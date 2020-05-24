@@ -42,6 +42,17 @@ p {
 
 #second-section {
     background-color: #FBFBFB;
+    .image {
+        height: 75px;
+        width: 75px;
+        margin-top: 25 px;
+        margin-bottom: 10px;;
+    }
+    .columns {
+        margin-left: 100px;
+        margin-right: 100px;
+        align-items: flex-start;
+    }
 }
 
 #third-section {

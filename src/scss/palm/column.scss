@@ -1,7 +1,5 @@
 @mixin column($width) {
     width: ($width/12)*100%;
-    padding:$default-padding;
-    box-sizing: border-box;
 }
 
 .columns {
@@ -24,9 +22,42 @@
 }
 
 .column {
+    padding:$default-padding;
+    box-sizing: border-box;
+
+    // the following defines for __ only columns
     @for $i from 1 through 12 {
         &.po-column-#{$i} { // po = phone only
             @include for-phone-only {
+                @include column($i);
+            }
+        }
+        &.tpo-column-#{$i} { // tpo = tablet portrait only
+            @include for-tablet-portrait-only {
+                @include column($i);
+            }
+        }
+        &.tlo-column-#{$i} { // tlo = tablet landscape only
+            @include for-tablet-landscape-only {
+                @include column($i);
+            }
+        }
+        &.do-column-#{$i} { // do = desktop only
+            @include for-desktop-only {
+                @include column($i);
+            }
+        }
+        &.bdo-column-#{$i} { // bdo = big desktop only
+            @include for-big-desktop-only {
+                @include column($i);
+            }
+        }
+    }
+
+    // the following defines for __ up columns
+    @for $i from 1 through 12 {
+        &.pu-column-#{$i} { // pu = phone up
+            @include for-phone-up {
                 @include column($i);
             }
         }
@@ -47,6 +78,35 @@
         }
         &.bdu-column-#{$i} { // bdu = big desktop up
             @include for-big-desktop-up {
+                @include column($i);
+            }
+        }
+    }
+
+    // the following defines for __ below columns
+    @for $i from 1 through 12 {
+        &.pb-column-#{$i} { // pb = phone below
+            @include for-phone-below {
+                @include column($i);
+            }
+        }
+        &.tpb-column-#{$i} { // tpb = tablet portrait below
+            @include for-tablet-portrait-below {
+                @include column($i);
+            }
+        }
+        &.tlb-column-#{$i} { // tlb = tablet landscape below
+            @include for-tablet-landscape-below {
+                @include column($i);
+            }
+        }
+        &.db-column-#{$i} { // db = desktop below
+            @include for-desktop-below {
+                @include column($i);
+            }
+        }
+        &.bdb-column-#{$i} { // bdb = big desktop below
+            @include for-big-desktop-below {
                 @include column($i);
             }
         }
