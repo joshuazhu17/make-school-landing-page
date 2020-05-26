@@ -20,6 +20,11 @@ h1 {
 
 h2 {
     color: #000000;
+    font-size: 32px;
+}
+
+h3 {
+    font-size: 28px;
 }
 
 p {
@@ -53,6 +58,9 @@ p {
         margin-right: 100px;
         align-items: flex-start;
     }
+    p {
+        color: #9DA2A6;
+    }
 }
 
 #third-section {
@@ -77,4 +85,11 @@ footer {
 
 .footer-logo {
     height: 1rem;
+}
+
+.hero {
+    background-image: url("../img/jumping_cats.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
 }
