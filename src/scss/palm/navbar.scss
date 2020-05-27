@@ -64,8 +64,20 @@
     }
     .right-items{
         display: inline-flex;
-        flex-direction: row;
         align-self: center;
+
+        @include for-tablet-landscape-up {
+            flex-direction: row;
+        }
+
+        @include for-tablet-portrait-below {
+            flex-direction: column;
+        }
+        .nav-item {
+            @include for-tablet-portrait-below {
+                display: none;
+            }
+        }
     }
     .nav-item{
         margin: ($nav-height - $nav-font-size)/2 16px;
@@ -89,5 +101,16 @@
     .nav-icon {
         height :$nav-image-height;
         margin:($nav-font-size - $nav-image-height)/2 0;
+    }
+    .right-menu {
+        height: 2rem;
+        width: 2rem;
+
+        @include for-tablet-landscape-up {
+            display: none;
+        }
+    }
+    .toggle-show {
+        display: flex;
     }
 }
