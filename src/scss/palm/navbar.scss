@@ -33,6 +33,7 @@
     box-sizing: border-box;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
     padding-left: (100vw/12);
     padding-right: (100vw/12);
     @include navbar($bg);
@@ -65,6 +66,7 @@
     .right-items{
         display: inline-flex;
         align-self: center;
+        align-items: center;
 
         @include for-tablet-landscape-up {
             flex-direction: row;
@@ -80,10 +82,14 @@
         }
     }
     .nav-item{
-        margin: ($nav-height - $nav-font-size)/2 16px;
-        align-items: center;
-        display: flex;
+        padding: ($nav-height - $nav-font-size)/2 16px;
         font-size: $nav-font-size;
+        box-sizing: border-box;
+
+        &.toggle-show {
+            display: flex;
+            padding: $nav-font-size 16px;
+        }
     }
     .nav-link {
         text-decoration: none;
@@ -105,12 +111,9 @@
     .right-menu {
         height: 2rem;
         width: 2rem;
-
+        margin: 1rem;
         @include for-tablet-landscape-up {
             display: none;
         }
-    }
-    .toggle-show {
-        display: flex;
     }
 }
