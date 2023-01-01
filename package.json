@@ -4,7 +4,7 @@
   "description": "Following Make School's tutorial for making a cat adoption landing page for the web",
   "main": "index.js",
   "dependencies": {
-    "parcel": "^1.12.4",
+    "parcel": "^2.8.2",
     "scss": "^0.2.4"
   },
   "devDependencies": {
